@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">SANDI</string>
+    <string name="title_activity_main">SANDI</string>
+    <string name="package_name">com.wearesandi.app</string>
+    <string name="custom_url_scheme">com.wearesandi.app</string>
+</resources>

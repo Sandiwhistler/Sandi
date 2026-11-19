@@ -1,0 +1,60 @@
+# Codemagic builds the SANDI app in the cloud, so no Mac is needed.
+# Setup steps are in app/README.md. Start a build from codemagic.io.
+
+workflows:
+
+  # iPhone + iPad: builds the app and sends it to TestFlight / App Store Connect
+  ios-app-store:
+    name: SANDI · iPhone (App Store)
+    instance_type: mac_mini_m2
+    max_build_duration: 60
+    integrations:
+      app_store_connect: SANDI App Store key   # must match the key name you add in Codemagic
+    environment:
+      ios_signing:
+        distribution_type: app_store
+        bundle_identifier: com.wearesandi.app
+      node: 22
+      xcode: latest
+    scripts:
+      - name: Install
+        script: cd app && npm ci
+      - name: Copy the app into the iOS project
+        script: cd app && npm run sync -- ios
+      - name: Set build number
+        script: |
+          cd app/ios/App
+          sed -i '' "s/CURRENT_PROJECT_VERSION = [0-9]*;/CURRENT_PROJECT_VERSION = $BUILD_NUMBER;/g" App.xcodeproj/project.pbxproj
+      - name: Set up code signing
+        script: xcode-project use-profiles
+      - name: Build
+        script: |
+          cd app/ios/App
+          xcode-project build-ipa --project "App.xcodeproj" --scheme "App"
+    artifacts:
+      - app/ios/App/build/ios/ipa/*.ipa
+    publishing:
+      app_store_connect:
+        auth: integration
+        submit_to_testflight: true
+        submit_to_app_store: false
+
+  # Android: builds a signed .aab to upload to Google Play
+  android-google-play:
+    name: SANDI · Android (Google Play)
+    instance_type: linux_x2
+    max_build_duration: 60
+    environment:
+      android_signing:
+        - sandi_upload_key   # must match the keystore reference name you add in Codemagic
+      node: 22
+      java: 21
+    scripts:
+      - name: Install
+        script: cd app && npm ci
+      - name: Copy the app into the Android project
+        script: cd app && npm run sync -- android
+      - name: Build
+        script: cd app/android && ./gradlew bundleRelease
+    artifacts:
+      - app/android/app/build/outputs/bundle/release/*.aab

@@ -1,0 +1,71 @@
+{
+  "_help": "SANDI product list. The app reads this from wearesandi.com/products.json, so changes show in the app without an app update. See app/README.md.",
+  "products": [
+    {
+      "id": "classic-tee",
+      "name": "The Classic Tee",
+      "price": 45,
+      "colour": "Shell Pink",
+      "sizes": ["XS", "S", "M", "L", "XL"],
+      "details": "Our everyday tee in soft, heavyweight cotton. Relaxed through the body, made for long summer days.",
+      "image": "",
+      "tag": "New",
+      "checkout": ""
+    },
+    {
+      "id": "linen-shirt",
+      "name": "The Linen Shirt",
+      "price": 95,
+      "colour": "Sand",
+      "sizes": ["XS", "S", "M", "L", "XL"],
+      "details": "Breezy pure linen with an easy, oversized fit. Wear it open over a swimsuit or buttoned up for evenings.",
+      "image": "",
+      "tag": "",
+      "checkout": ""
+    },
+    {
+      "id": "baby-tee",
+      "name": "The Baby Tee",
+      "price": 40,
+      "colour": "White",
+      "sizes": ["XS", "S", "M", "L"],
+      "details": "A fitted, cropped tee in stretch cotton rib. The one you'll reach for all summer.",
+      "image": "",
+      "tag": "New",
+      "checkout": ""
+    },
+    {
+      "id": "linen-short",
+      "name": "The Linen Short",
+      "price": 65,
+      "colour": "Cherry",
+      "sizes": ["XS", "S", "M", "L", "XL"],
+      "details": "High-waisted linen shorts with an elastic back and deep pockets.",
+      "image": "",
+      "tag": "",
+      "checkout": ""
+    },
+    {
+      "id": "beach-tote",
+      "name": "The Beach Tote",
+      "price": 40,
+      "colour": "Natural",
+      "sizes": [],
+      "details": "A roomy canvas tote that fits a towel, a book and everything in between.",
+      "image": "",
+      "tag": "",
+      "checkout": ""
+    },
+    {
+      "id": "sun-cap",
+      "name": "The Sun Cap",
+      "price": 38,
+      "colour": "Shell Pink",
+      "sizes": [],
+      "details": "Washed cotton cap with an embroidered SANDI logo and adjustable strap.",
+      "image": "",
+      "tag": "",
+      "checkout": ""
+    }
+  ]
+}

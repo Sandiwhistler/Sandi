@@ -1,0 +1,12 @@
+{
+  "appId": "com.wearesandi.app",
+  "appName": "SANDI",
+  "webDir": "www",
+  "backgroundColor": "#f6c4c3",
+  "ios": { "contentInset": "never", "backgroundColor": "#faf4ee" },
+  "android": { "backgroundColor": "#faf4ee" },
+  "plugins": {
+    "SplashScreen": { "launchAutoHide": true, "launchShowDuration": 1500, "backgroundColor": "#f6c4c3", "showSpinner": false },
+    "StatusBar": { "style": "LIGHT", "overlaysWebView": true }
+  }
+}

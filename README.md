@@ -10,6 +10,10 @@ Plain HTML/CSS, no build step. It runs on any GoDaddy Web Hosting (cPanel) plan.
 | --- | --- |
 | `index.html` | Splash page: logo + **Enter** button |
 | `shop.html` | Clothing page: products, about, Instagram, footer |
+| `privacy.html` | Privacy policy (needed for the app stores) |
+| `products.json` | Product list the **SANDI app** reads. Upload it with the site. |
+| `app/` | The SANDI iPhone / iPad / Android app. See `app/README.md`. |
+| `codemagic.yaml` | Builds the app in the cloud (no Mac needed) |
 | `assets/css/styles.css` | All styling. Brand colours are at the top. |
 | `assets/img/` | Logo (red + white, transparent), favicon |
 | `assets/img/products/` | Put product photos here |
@@ -44,7 +48,7 @@ Buy Button) for each product and paste that link into the button's `href`.
 2. Open **File Manager** → go into `public_html`.
    (If wearesandi.com is an add-on domain, open its own folder instead.)
 3. Delete any GoDaddy placeholder files there, such as `index.php` or `default.html`.
-4. Click **Upload** and upload `index.html`, `shop.html` and the whole `assets`
+4. Click **Upload** and upload `index.html`, `shop.html`, `privacy.html`, `products.json` and the whole `assets`
    folder. The easiest way: upload a `.zip` of the site, then right-click it → **Extract**.
    Make sure `index.html` ends up directly inside `public_html`, not in a subfolder.
 5. Visit https://wearesandi.com. You may need a hard refresh.
