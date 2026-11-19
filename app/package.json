@@ -7,7 +7,7 @@
     "products": "cp ../products.json www/products.json",
     "preview": "npm run products && npx --yes http-server www -p 8080 -c-1",
     "sync": "npm run products && cap sync",
-    "icons": "capacitor-assets generate --iconBackgroundColor '#f6c4c3' --splashBackgroundColor '#f6c4c3'"
+    "icons": "capacitor-assets generate --ios --android --iconBackgroundColor '#f6c4c3' --splashBackgroundColor '#f6c4c3'"
   },
   "dependencies": {
     "@capacitor/android": "^8.6.2",
